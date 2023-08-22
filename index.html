@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+</head>
+<title>Главная</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="conteiner">
+        <header class="header">
+            <div class="container header__container">
+
+                <div class="menu__conteiner">
+                    <a href="index.html">
+                        <img src="img/logo.png" class="logo">
+                    </a>
+                    <div class="menu-burger__header">
+                        <span></span>
+                    </div>
+                    <nav class="header__nav">
+                        <ul class="menu header__menu">
+                            <li><a href="" class="menu__item">Обо мне</a></li>
+                            <li><a href="" class="menu__item">Наставничество</a></li>
+                            <li><a href="" class="menu__item">Мероприятия</a></li>
+                            <li><a href="" class="menu__item">Кейсы</a></li>
+                            <li><a href="" class="menu__item">Отзывы</a></li>
+                            <li><a href="" class="menu__item">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="phone">
+                        <a href="tel:+73451233445">
+                            <img src="img/phone.png">
+                            <p>8-345-123-34-45</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="popup">
+            <div id="openModal2" class="modalDialog2">
+                <div class="modalDialog2-item">
+                    <a href="#close" title="Close" class="close"><img src="img/Cross.png"></a>
+
+                    <div class="consultation">
+                        <form class="msform" onsubmit="return checkForm(this)">
+                            <div class="form js-form-validate" id="form_test">
+
+                                <h2 class="fs-title">Закажите обратный звонок</h2>
+                                <input class="input" type="text" value="" name="fio" id="fio" placeholder="имя" required
+                                    onclick="localStorage.removeItem('fio');fio.value=''">
+                                <input class="phone-field input" for="num" type="text" name="num" id="num"
+                                    placeholder="телефон" data-rule-required="true" data-rule-minlength="10"
+                                    data-msg="Введите номер телефона" required>
+
+
+                                <div class="checkbox">
+                                    <input class="checkbox-inp" type="checkbox" id="rules" name="horns" />
+                                    <label for="rules">Согласен на сохранение и обработку персональных данных</label>
+                                </div>
+
+                                <div class="button-block-pop">
+                                    <div class="button-block-item-pop">
+                                        <div class="button-block-item-free-pop">
+                                            <button id="submit-form" type="submit" name="next"
+                                                class="next action-button">Заказать обратный звонок</button>
+                                        </div>
+
+                                        <div class="link-but-pop">
+                                            <img src="img/Vector_wh.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p id='err' class='error'></p>
+
+                            </div>
+                        </form>
+                        <div class="modalDialog2-2" id="form_test2">
+                            <a href="#close" title="Close" class="close"><img src="img/Cross.png"></a>
+                            <div class="modalDialog2-item-2">
+                                <h1>Спасибо за заявку</h1>
+                                <p>Я обязательно свяжусь с Вами в ближайшее время.</p>
+                                <a href="index.html">
+                                    <img src="img/logo.png" class="logo">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="conteiner wrapper">
+        <div class="content">
+            <h1>Создаю условия для вашего успеха</h1>
+
+            <div class="content-text-block">
+                <p class="content-text">Когда ваше время и энергия лучше сфокусированы,
+                    стремление к новым возможностям становится
+                    реальностью,
+                    ваш успех зависит от ваших действий</p>
+                <p class="content-text-dnone">Ваш успех зависит от ваших действий</p>
+            </div>
+
+            <div class="button-block">
+                <div class="button-block-item">
+                    <div class="button-block-item-zap">
+                        <a href="#" class="link-text">
+                            Записаться на консультацию
+                        </a>
+                        <a href="#" class="link-text-nn">
+                            Записаться
+                        </a>
+                    </div>
+                    <div class="link">
+                        <img src="img/Vector_bl.png">
+                    </div>
+                </div>
+                <div class="button-block-item">
+                    <div class="button-block-item-free">
+                        <a href="#openModal2" class="link-text">
+                            Бесплатная консультация
+                        </a>
+                        <a href="#openModal2" class="link-text-nn">
+                            Заказать звонок
+                        </a>
+                    </div>
+                    <div class="link-but">
+                        <img src="img/Vector_wh.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-text-block-bt">
+                <div class="content-text-block-bt-item">
+                    <p class="item-p-zag">130+</p>
+                    <p class="item-p-txt">техник для достижения целей</p>
+                    <p class="item-p-txt-nn">техники</p>
+                </div>
+                <div class="content-text-block-bt-item">
+                    <p class="item-p-zag">250%</p>
+                    <p class="item-p-txt">увеличение личной продуктивности</p>
+                    <p class="item-p-txt-nn">продуктивности</p>
+                </div>
+            </div>
+        </div>
+        <img src="img/mentor.png" class="mentor">
+    </main>
+
+
+</body>
+
+</html>

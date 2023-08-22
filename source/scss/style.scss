@@ -1,0 +1,912 @@
+@import "nullstyle.scss";
+
+@font-face {
+    font-family: "RalewayLight";
+    src: url("/fonts/Raleway-ExtraLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "RalewayRegular";
+    src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RalewayBold";
+    src: url("/fonts/Raleway-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MontserratLight";
+    src: url("/fonts/Montserrat-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MontserratBold";
+    src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+$fz-h1: 65px;
+$fz-h2: 55px;
+$fz-p1: 40px;
+$fz-p2: 18px;
+$fz-p3: 16px;
+$fz-p4: 14px;
+
+$lh-35: 35px;
+$lh-41: 41px;
+
+$bg-color: #FFFFFF;
+$color: #FFFFFF;
+$color-b: #133457;
+$color-blue: #0F1D45;
+
+@mixin button-block-item($clr) {
+    background-color: $clr;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: url('../img/background.jpg') no-repeat;
+    color: $color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: MontserratLight;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+.content {
+    padding: 0 0 100px;
+}
+
+.conteiner {
+    width: 100%;
+    max-width: 1420px;
+    // min-width: 1024px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 16px;
+}
+
+// логотип
+
+.logo {
+    height: clamp(20px, 2.5vw, 34px);
+}
+
+// меню
+
+.menu__conteiner {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: space-between;
+    font-family: MontserratRegular;
+
+}
+
+.menu a {
+    color: $color;
+    text-decoration: none;
+    font-size: $fz-p4;
+}
+
+.header__nav {
+    right: 54px;
+    display: block;
+    font-family: MontserratLight;
+}
+
+.header__menu {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.header__menu li {
+    list-style: none;
+    margin: 0px 0px 0px 30px;
+}
+
+@media(max-width: 900px) {
+
+    /* меню */
+
+    .header__nav {
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        background: $color-b;
+        width: 100%;
+        transition: all 0.4s ease;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100%;
+    }
+
+    .header__nav.open-menu {
+        left: 0;
+    }
+
+    .header__menu li {
+        margin: 40px 0px 40px 33px;
+        font-size: 14px;
+    }
+
+    .menu-burger__header {
+        position: absolute;
+        width: 40px;
+        right: clamp(57px, 22.7vw, 169.6px);
+        height: 35px;
+        display: block;
+        margin-left: auto;
+        border: 1px solid;
+        border-radius: 50%;
+    }
+
+    .menu-burger__header span,
+    .menu-burger__header:after,
+    .menu-burger__header:before {
+        height: 2px;
+        width: 55%;
+        position: absolute;
+        background: $color;
+        margin: auto 9px;
+    }
+
+    .menu-burger__header span {
+        top: 15.6px;
+    }
+
+    .menu-burger__header:after,
+    .menu-burger__header:before {
+        content: '';
+    }
+
+    .menu-burger__header:after {
+        bottom: 9px;
+    }
+
+    .menu-burger__header:before {
+        top: 10px;
+    }
+
+    .menu-burger__header.open-menu span {
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    .menu-burger__header.open-menu:before {
+        transform: rotate(38deg);
+        top: 16px;
+        transition: 0.4s;
+    }
+
+    .menu-burger__header.open-menu:after {
+        transform: rotate(-38deg);
+        bottom: 16px;
+        transition: 0.4s;
+    }
+
+    header {
+        height: 60px;
+    }
+
+}
+
+.error {
+    margin-top: clamp(19px, 5vw, 50.8px);
+}
+
+.button-block-item-pop {
+    display: flex;
+    margin-right: clamp(19px, 2.5vw, 34px);
+    width: 100%;
+}
+
+.button-block-item-pop {
+    border: 1px solid $color;
+    border-right: 0px;
+    color: $color;
+}
+
+.button-block-item-free-pop {
+    // padding: 22px;
+    display: flex;
+    width: 100%;
+}
+
+.link-but-pop {
+    padding: clamp(20px, 5.6vw, 30px);
+    border: 1px solid $color;
+}
+
+.link-but-pop img {
+    position: absolute;
+    width: clamp(9px, 2.5vw, 20px);
+}
+
+// телефон
+
+.phone {
+    display: flex;
+    align-items: center;
+    width: 16%;
+    // position: absolute;
+    right: 30px;
+    font-family: MontserratLight;
+}
+
+.icon-phone {
+    // background: url("/img/phone.png");
+    // background-size: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    height: clamp(19px, 2.5vw, 34px);
+    width: 19%;
+    // outline: none;
+    z-index: -100;
+}
+
+.phone img {
+    margin-right: 20px;
+}
+
+.phone a {
+    color: $color;
+    margin-left: 20px;
+    color: #FFFFFF;
+    margin-left: 20px;
+    display: flex;
+    /* margin-left: 20px; */
+    align-items: center;
+}
+
+@media(max-width: 900px) {
+    .phone p {
+        display: none;
+    }
+
+    .phone img {
+        margin-right: 0;
+    }
+}
+
+@media(max-width: 1230px) {
+    .button-block {
+        flex-direction: column;
+    }
+
+    .button-block-item {
+        margin-bottom: clamp(19px, 2.5vw, 34px);
+    }
+}
+
+// попап
+
+.info {
+    display: inline-block;
+    background: #007FEA;
+    color: white;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-right: 0;
+}
+
+.form h1 {
+    color: #007FEA;
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+}
+
+.popup:hover {
+    background-color: #0058A1;
+}
+
+.text {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #FFA800;
+    padding: 5%;
+    width: 70%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 10%
+}
+
+.text h2 {
+    color: #FFA800;
+    font-size: 30px;
+    margin-bottom: 5%
+}
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+}
+
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 500px;
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    margin: 15% auto;
+    padding: 25px 15px 25px;
+    border-radius: 8px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.modalDialog2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+}
+
+.modalDialog2:target {
+    display: none;
+    pointer-events: auto;
+}
+
+.modalDialog2-item {
+    width: 50%;
+    height: 100%;
+    top: 20%;
+    left: 50%;
+    // position: absolute;
+    // margin: 15% auto;
+    padding: 25px;
+    // border-radius: 8px;
+    @include button-block-item($color-blue);
+    // transform: translate(-50%, -50%);
+}
+
+.modalDialog2-2 {
+    height: 100%;
+    top: 0;
+    width: 50%;
+    left: 0;
+    position: absolute;
+    padding: 25px 15px 25px;
+    @include button-block-item($color-blue);
+    // transform: translate(-50%, -50%);
+    z-index: -1000;
+}
+
+.test {
+    z-index: 1000;
+    // position: absolute;
+
+}
+
+.modalDialog2-item-2 {
+    width: 70%;
+    height: 100%;
+    top: 20%;
+    margin: auto;
+    left: 50%;
+    // position: absolute;
+    // margin: 15% auto;
+    padding: 25px 15px 25px;
+    // border-radius: 8px;
+    @include button-block-item($color-blue);
+    // transform: translate(-50%, -50%);
+}
+
+.modalDialog2-item-2 h1 {
+    font-size: clamp(25px, 4.6vw, 80px);
+    // font-family: "RalewayRegular";
+    line-height: clamp(34px, 5.2vw, 80px);
+    margin-top: clamp(19px, 5vw, 100px);
+    text-align: center;
+}
+
+.modalDialog2-item-2 p {
+    font-size: clamp(25px, 3.4vw, 80px);
+    // text-transform: uppercase;
+    // font-family: "RalewayRegular";
+    line-height: clamp(34px, 5.4vw, 76.7px);
+    margin-top: clamp(19px, 5vw, 100px);
+    color: $color;
+    text-align: center;
+}
+
+.modalDialog2-item-2 img {
+    height: clamp(20px, 2.5vw, 34px);
+    position: absolute;
+    bottom: 70px;
+    right: 100px;
+}
+
+@media(max-width: 900px) {
+    .modalDialog2-item {
+        width: 100%;
+    }
+
+    .modalDialog2-2 {
+        width: 100%;
+    }
+}
+
+.modalDialog2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+}
+
+.modalDialog2:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.close {
+    // color: #607B9D;
+    line-height: 25px;
+    /* position: absolute; */
+    // right: 30px;
+    /* text-align: center; */
+    /* top: 30px; */
+    width: 24px;
+    // text-decoration: none;
+    // font-weight: bold;
+    margin-left: 95%;
+}
+
+
+.close img {
+    width: 29px;
+}
+
+#openModal2 .close img {
+    width: 29px;
+}
+
+.consultation {
+    display: flex;
+}
+
+.close {}
+
+.msform {
+    margin: 4% auto;
+    border-radius: 8px;
+    width: clamp(70%, 78vw, 86%);
+
+}
+
+.msform .form {
+    display: flex;
+    flex-direction: column;
+    border: 0 none;
+    border-radius: 8px;
+}
+
+.msform .form1 {
+    display: flex;
+    flex-direction: column;
+    border: 0 none;
+    border-radius: 8px;
+}
+
+.msform .form:not(:first-of-type) {
+    display: none;
+}
+
+.checkbox {
+    color: $color;
+    line-height: clamp(25px, 2.4vw, 76.7px)
+}
+
+.input {
+    padding: 15px;
+    border-bottom: 1px solid $color;
+    margin-bottom: 10px;
+    color: $color;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include button-block-item($color-blue);
+    margin-bottom: clamp(19px, 5vw, 100px);
+}
+
+.msform .action-button {
+    margin: auto;
+}
+
+.fs-title {
+    font-size: clamp(25px, 3.4vw, $fz-h1);
+    margin-bottom: 10px;
+    // text-align: center;
+    margin-bottom: clamp(19px, 5vw, 100px);
+
+}
+
+button {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    font-size: clamp(14px, 2.5vw, 18px);
+    margin-top: 10%;
+    color: white;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+}
+
+// контент
+
+.content {
+    padding: 0 0 100px;
+    width: 100%;
+    max-width: clamp(300px, 49vw, 753.6px);
+    height: auto;
+    margin: auto 0;
+    position: relative;
+    // padding-right: 50px;
+    // padding-left: 50px;
+    font-size: 16px;
+}
+
+// блок 1 - заголовок
+
+.content h1 {
+    font-size: clamp(25px, 3.4vw, $fz-h1);
+    text-transform: uppercase;
+    font-family: "RalewayBold";
+    line-height: clamp(34px, 4.2vw, 80px);
+    margin-top: clamp(19px, 5vw, 100px);
+    // margin-top: clamp(19px, 5.1vw, 100.5px);
+}
+
+// картинка
+
+.mentor {
+    // width: 100%; 
+    height: clamp(500px, 70vw, 806px);
+    object-fit: cover;
+    object-position: bottom;
+    // width: 100%;
+    // max-width: 400px;
+    // height: auto;
+    position: absolute;
+    bottom: 64px;
+    z-index: -1;
+    right: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    // background-color: red;
+    // border: 2px solid black;
+    display: flex;
+}
+
+// блок 2
+
+.content-text-block {
+    border-left: 1px solid;
+    padding-left: clamp(6px, 2.5vw, 24px);
+    line-height: clamp(16px, 4.2vw, 24px);
+    margin-top: clamp(19px, 5vw, 50.8px);
+}
+
+.content-text-dnone {
+    display: none;
+}
+
+.content-text,
+.content-text-dnone {
+    font-size: clamp(10px, 2.5vw, $fz-p3);
+    font-family: "RalewayLight";
+
+}
+
+// блок 3
+
+.button-block {
+    display: flex;
+    margin-top: clamp(19px, 5vw, 50.8px);
+}
+
+.button-block-item {
+    display: flex;
+    margin-right: clamp(19px, 2.5vw, 34px);
+}
+
+.button-block-item-zap,
+.button-block-item-free {
+    // padding: 22px;
+    display: flex;
+    width: clamp(126px, 22vw, 313px);
+    font-family: "RalewayRegular";
+}
+
+.link,
+.link-but {
+    padding: clamp(20px, 5.6vw, 34.4px);
+}
+
+.link img,
+.link-but img {
+    position: absolute;
+    width: clamp(9px, 2.5vw, 20px);
+}
+
+.link {
+    @include button-block-item($bg-color);
+    border-left: 2px solid $color-b;
+    color: $color;
+}
+
+.button-block-item-zap {
+    @include button-block-item($bg-color);
+    color: $color-b;
+}
+
+.button-block-item-free a {
+    color: $color;
+    font-size: $fz-p2;
+    margin: auto;
+}
+
+.button-block-item-zap a {
+    color: $color-b;
+    font-size: $fz-p2;
+    margin: auto;
+}
+
+.button-block-item-free,
+.link-but {
+    border: 1px solid $color;
+    color: $color;
+}
+
+.button-block-item-zap {
+    border: 1px solid $color;
+}
+
+// .link {
+//     border-left: 2px solid $color-b;
+//     color: $color;
+// }
+
+// блок 4
+
+.content-text-block-bt {
+    display: flex;
+    margin-top: clamp(61px, 10vw, 142px)
+}
+
+.content-text-block-bt-item,
+.content-text-block-bt-item {
+    border-left: 1px solid;
+    padding-left: clamp(6px, 2.5vw, 24px);
+    line-height: clamp(16px, 4.2vw, 24px);
+    padding: 0px clamp(34px, 15vw, 222px) 0px 0px;
+}
+
+@media(max-width: 1230px) {
+
+    .content-text-block-bt-item,
+    .content-text-block-bt-item {
+        padding: 0 clamp(34px, 3.9vw, 67px) 0 0;
+    }
+}
+
+.item-p-zag {
+    font-size: clamp(16px, 3.4vw, 40px);
+    margin-bottom: clamp(9.9px, 2.2vw, 34px);
+    padding-left: 20px;
+    font-family: "MontserratBold";
+}
+
+.item-p-txt,
+.item-p-zag,
+.item-p-txt-nn {
+    padding-left: 20px;
+}
+
+.button-block-item-zap a,
+.button-block-item-free a {
+    font-size: clamp(10px, 2.5vw, 18px);
+}
+
+.item-p-txt,
+.item-p-txt-nn {
+    width: clamp(19px, 41.1vw, 196px);
+    font-size: clamp(10px, 2.5vw, 16px);
+    font-family: "RalewayLight";
+}
+
+.item-p-txt-nn {
+    display: none;
+}
+
+.link-text-nn {
+    display: none;
+}
+
+@media(max-width: 900px) {
+
+    .conteiner {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .content {
+        max-width: clamp(234px, 49vw, 753.6px);
+    }
+
+    .content-text-dnone {
+        display: block;
+    }
+
+    .content-text {
+        display: none;
+    }
+
+    .button-block {
+        flex-direction: column;
+    }
+
+    // .button-block-item {
+    //     margin-bottom: clamp(19px, 2.5vw, 34px);
+    // }
+
+    .item-p-txt {
+        display: none;
+    }
+
+    .item-p-txt-nn {
+        display: block;
+    }
+
+    .link-text {
+        display: none;
+    }
+
+    .link-text-nn {
+        display: block;
+    }
+
+    .mentor {
+        // right: -115px;
+
+    }
+
+    .item-p-txt,
+    .item-p-txt-nn {
+        width: auto;
+        font-size: clamp(10px, 2.5vw, 16px);
+    }
+}
+
+@media(max-width: 600px) {
+    .mentor {
+        right: -115px;
+    }
+}
+
+.blocks-links {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto 0 0;
+    width: 100%;
+}
+
+.img-link {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+
+    position: relative;
+    transition: all .4s;
+    margin: 5px;
+}
+
+.img-link-item {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: all .4s;
+    margin: 5px;
+}
+
+.img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+    border-radius: 20px;
+}
